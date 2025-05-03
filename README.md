@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Quantix AI Chat Demo
 
-## Getting Started
+A lightweight open-source demo showcasing how to build a chatbot UI integrated with OpenAI's Assistant API using **Next.js**, **React Hooks**, and **Cloudflare Workers**.
 
-First, run the development server:
+## 🚀 Features
+
+- Stateless chat interface with persistent local history
+- Assistant API integration via Cloudflare Workers
+- Thread handling with automatic regeneration
+- Built with Next.js 15 and TailwindCSS
+- Clean separation of concerns (hook + UI)
+- Ready for open source contributions
+
+## 🧱 Stack
+
+- **Next.js** (App Router)
+- **React 19**
+- **TypeScript**
+- **TailwindCSS**
+- **OpenAI Assistant API**
+- **Cloudflare Workers (API)**
+
+## 📦 Getting Started
+
+1. **Clone the repo**
+
+```bash
+git clone https://github.com/your-username/quantix-chat-demo.git
+cd quantix-chat-demo
+```
+
+2. **Install dependencies**
+
+```bash
+npm install
+```
+
+3. **Set environment variables**
+
+Create a `.env.local` file in the root of your project. Use the provided `.env.local.example` as a template:
+
+```bash
+cp .env.local.example .env.local
+```
+
+Then fill in your API base URL:
+
+```
+NEXT_PUBLIC_QUANTIX_API_URL=https://your-cloudflare-worker-url.workers.dev
+```
+
+4. **Run the dev server**
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit `http://localhost:3000` to see the chat in action.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🧼 Code Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+/app               → Main Next.js pages
+/components        → Chat UI components
+/hooks             → useChat.ts (state + API logic)
+/utils             → Shared types and constants
+/public            → Static assets (if needed)
+```
 
-## Learn More
+## 🧠 About the API
 
-To learn more about Next.js, take a look at the following resources:
+This project consumes an open-source API deployed to Cloudflare Workers, which wraps OpenAI's Assistant API. It supports:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Creating a thread: `GET /thread`
+- Sending a message: `POST /chat`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+You can find the Worker source code here: [GitHub Repository](https://github.com/Hensell/demo-quantix-chat)
 
-## Deploy on Vercel
+## 📖 License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+MIT
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+Made with ❤️ by [**Hensell**](https://hensell.dev)
