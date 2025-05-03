@@ -2,6 +2,8 @@
 
 A lightweight open-source demo showcasing how to build a chatbot UI integrated with OpenAI's Assistant API using **Next.js**, **React Hooks**, and **Cloudflare Workers**.
 
+🟢 **Live Demo:** [chatbot.quantix.software](https://chatbot.quantix.software)
+
 ## 🚀 Features
 
 - Stateless chat interface with persistent local history
